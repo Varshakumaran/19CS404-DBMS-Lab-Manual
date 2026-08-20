@@ -105,123 +105,184 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+<img width="1242" height="402" alt="exp1" src="https://github.com/user-attachments/assets/ffb19b20-fffa-4d6f-91b2-4942d1a9f077" />
+
 
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE Bonuses (
+    BonusID INTEGER PRIMARY KEY,
+    EmployeeID INTEGER,
+    BonusAmount REAL CHECK (BonusAmount > 0),
+    BonusDate DATE,
+    Reason TEXT NOT NULL,
+    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
+);
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1241" height="374" alt="exp1 1" src="https://github.com/user-attachments/assets/99bd3696-a33c-41ea-9def-5590297f4faa" />
 
 **Question 2**
 ---
--- Paste Question 2 here
+<img width="1232" height="514" alt="exp1 2" src="https://github.com/user-attachments/assets/2d977ba4-6660-4f09-96fe-7682e1eb0156" />
 
 ```sql
--- Paste your SQL code below for Question 2
+ALTER TABLE Companies RENAME COLUMN name TO first_name;
+
+ALTER TABLE Companies ADD COLUMN mobilenumber number;
+
+ALTER TABLE Companies ADD COLUMN DOB Date;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1243" height="480" alt="exp1 3" src="https://github.com/user-attachments/assets/257cd8dd-c1aa-423d-921f-b3d4a400c833" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="1269" height="493" alt="exp1 4" src="https://github.com/user-attachments/assets/ef362d6c-035e-41dc-803c-8c7c5d4d68e8" />
 
 ```sql
--- Paste your SQL code below for Question 3
+INSERT INTO Books (ISBN, Title, Author, Publisher, Year)
+VALUES ('978-1234567890', 'Introduction to AI', 'John Doe', NULL, NULL);
+
+INSERT INTO Books (ISBN, Title, Author, Publisher, Year)
+VALUES ('978-9876543210', 'Deep Learning', 'Jane Doe', 'TechPress', 2022);
+
+INSERT INTO Books (ISBN, Title, Author, Publisher, Year)
+VALUES ('978-1122334455', 'Cybersecurity Essentials', 'Alice Smith', NULL, 2021);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1232" height="371" alt="exp1 5" src="https://github.com/user-attachments/assets/508a19a8-81f1-4cd4-b2ec-48d54c569f58" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+<img width="1220" height="311" alt="exp1 6" src="https://github.com/user-attachments/assets/26551e78-8f2d-4efe-bfb4-8f2bd3e50669" />
 
 ```sql
--- Paste your SQL code below for Question 4
+CREATE TABLE jobs (
+    job_id INTEGER,
+    job_title TEXT DEFAULT '',
+    min_salary INTEGER DEFAULT 8000,
+    max_salary INTEGER DEFAULT NULL
+);
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1227" height="402" alt="exp1 7" src="https://github.com/user-attachments/assets/cd1a6197-5436-4dff-bf14-ece37c061ac8" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+<img width="1123" height="417" alt="exp1 8" src="https://github.com/user-attachments/assets/03fff541-8b79-4658-bb19-ba5456e73954" />
 
 ```sql
--- Paste your SQL code below for Question 5
+CREATE TABLE Orders (
+    OrderID INTEGER,
+    OrderDate TEXT,
+    CustomerID INTEGER
+);
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1235" height="471" alt="exp1 9" src="https://github.com/user-attachments/assets/54111857-cc5c-4af4-9da2-19ce5c4038b5" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+
+<img width="1090" height="476" alt="exp1 10" src="https://github.com/user-attachments/assets/d80ad7b8-2419-4856-af55-3b249c30a7bc" />
+
 
 ```sql
--- Paste your SQL code below for Question 6
+CREATE TABLE item (
+    item_id TEXT PRIMARY KEY,
+    item_desc TEXT NOT NULL,
+    rate INTEGER NOT NULL,
+    icom_id TEXT,
+    FOREIGN KEY (icom_id)
+        REFERENCES company(com_id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+);
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1242" height="434" alt="exp1 11" src="https://github.com/user-attachments/assets/60ec4ffc-207a-4f1e-8c07-3aaf6e9f601c" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+<img width="1079" height="369" alt="exp1 12" src="https://github.com/user-attachments/assets/f2a44a57-5c56-4f8a-9719-e6d177aa65da" />
 
 ```sql
--- Paste your SQL code below for Question 7
+INSERT INTO Customers (CustomerID, Name, Address, Email)
+SELECT CustomerID, Name, Address, Email
+FROM Old_customers;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1231" height="381" alt="exp 1 13" src="https://github.com/user-attachments/assets/13278387-2f97-4abf-8776-3c5280a6877e" />
 
 **Question 8**
 ---
--- Paste Question 8 here
+<img width="1228" height="509" alt="exp1 13" src="https://github.com/user-attachments/assets/1fb6178c-9df6-4b74-9964-a1087ce6d335" />
 
 ```sql
--- Paste your SQL code below for Question 8
+INSERT INTO Customers (CustomerID, Name, Address, City, ZipCode)
+VALUES (306, 'Diana Prince', 'Themyscira', NULL, NULL);
+
+INSERT INTO Customers (CustomerID, Name, Address, City, ZipCode)
+VALUES (307, 'Bruce Wayne', 'Wayne Manor', 'Gotham', 10007);
+
+INSERT INTO Customers (CustomerID, Name, Address, City, ZipCode)
+VALUES (308, 'Peter Parker', 'Queens', NULL, 11375);
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1238" height="378" alt="exp1 14" src="https://github.com/user-attachments/assets/f9c5129b-ec1c-44b1-98a6-46e015338cac" />
 
 **Question 9**
 ---
--- Paste Question 9 here
+<img width="1199" height="469" alt="exp1 15" src="https://github.com/user-attachments/assets/a75535a0-fd6c-4612-bac7-1eb81b35e74f" />
 
 ```sql
--- Paste your SQL code below for Question 9
+ALTER TABLE Companies RENAME COLUMN name TO first_name;
+
+ALTER TABLE Companies ADD COLUMN mobilenumber number;
+
+ALTER TABLE Companies ADD COLUMN DOB Date;
+
+ALTER TABLE Companies ADD COLUMN State varchar(30);
 ```
 
 **Output:**
+<img width="1236" height="494" alt="exp1 16" src="https://github.com/user-attachments/assets/d819bf61-0a8f-4b8c-9007-e2d8e7aff6d5" />
 
-![Output9](output.png)
 
 **Question 10**
 ---
--- Paste Question 10 here
+
+<img width="1102" height="358" alt="exp1 17" src="https://github.com/user-attachments/assets/dbf33582-24a0-45f8-99ed-3a986ca0fa93" />
 
 ```sql
--- Paste your SQL code below for Question 10
+CREATE TABLE Invoices (
+    InvoiceID INTEGER PRIMARY KEY,
+    InvoiceDate DATE,
+    DueDate DATE CHECK (DueDate > InvoiceDate),
+    Amount REAL CHECK (Amount > 0)
+);
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1232" height="357" alt="exp1 18" src="https://github.com/user-attachments/assets/7a191876-9128-4d74-b911-728dfe01180f" />
 
 
 ## RESULT
